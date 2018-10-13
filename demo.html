@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Snyper Demonstration</title>
+    <script src="snyper.js"></script>
+    <style media="screen">
+      .container {
+        background-color:lightgray;
+        padding:20px;
+        border-radius:10px;
+        font-family:arial;
+        overflow:visible;
+      }
+      h1 {
+        margin:0;
+        margin-bottom: 20px;
+        color:white;
+        font-family:arial;
+      }
+      button {
+        border-radius:5px;
+        border:0;
+        padding:10px;
+        font-size:20px;
+        cursor:pointer;
+        transition:0.5s;
+      }
+      button:hover {
+        background-color:#9933FF;
+        color:white;
+      }
+
+    </style>
+    <script>
+        Snyper.initiate()
+
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button" onclick="snype.prevState()">Previous frame</button>
+    <button type="button" name="button" onclick="snype.nextState()">Next frame</button>
+    <div class="container" >
+      <div s-frame="main" s-parent s-indexing="manual" s-default="title">
+        <div s-child s-frame="title">
+          <h1>First frame title</h1>
+          Content of the first frame
+        </div>
+        <div s-child s-frame="title">
+          <button type="button" id="button" name="button">Next frame</button>
+        </div>
+        <div s-child s-frame="quintessa" s-index="2">
+          <h1>Second frame</h1>
+          This is the content of the second frame
+        </div>
+
+        <div s-child s-frame="cybertron" s-index="3">
+          <h1>Third frame</h1>
+          This is the third frame
+        </div>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+    snype = new Snyper("main")
+    </script>
+  </body>
+</html>
